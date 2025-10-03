@@ -1,0 +1,30 @@
+{
+  "configs": [
+    "salesforce-system-api.xml"
+  ],
+  "secureProperties": [],
+  "supportedJavaVersions": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:test:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.9.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "log4j2.xml",
+        "api/example/postAccountExample.raml",
+        "api/example/postAccountResponseExample.raml",
+        "api/datatypes/postAccountDataType.raml",
+        "api/datatypes/postAccountResponseDataType.raml",
+        "api/salesforce-system-api.raml",
+        "salesforce-system-api.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

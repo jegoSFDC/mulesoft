@@ -1,0 +1,36 @@
+#%RAML 1.0
+title: Salesforce Account API
+version: v1
+mediaType: application/json
+
+types:
+  accountLib: !include /datatypes/postAccountDataType.raml
+  postaccount: !include /datatypes/postAccountResponseDataType.raml
+
+/accounts:
+  post:
+    description: Create a new Account in Salesforce.
+    body:
+      application/json:
+        type: accountLib
+        example: !include /example/postAccountExample.raml
+    responses:
+      201:
+        description: Account created successfully.
+        body:
+          application/json:
+            type: postaccount
+            example: !include /example/postAccountResponseExample.raml
+      400:
+        description: Invalid input
+      500:
+        description: Internal server error
+
+/health:
+  get:
+    description: Health check endpoint
+    responses:
+      200:
+        body:
+          application/json:
+            example: "api is alive"
