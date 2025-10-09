@@ -2,9 +2,9 @@ name: Mulesoft CI/CD Githubaction Pipeline
 
 on:
   pull_request:
-    branches: [ test ]
+    branches: [ develop ]
   push:
-    branches: [ test ]
+    branches: [ develop ]
 
 jobs:
   prvalidationbuild:
@@ -15,7 +15,7 @@ jobs:
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
 
   deploy-after-merge:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/test'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     uses: jegoSFDC/mulesofttemplate/.github/workflows/cd-deploy.yml@main
     secrets:
       CA_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
