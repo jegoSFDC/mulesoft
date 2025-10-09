@@ -31,4 +31,5 @@
         }]' mimeType="application/json"/>
     </flow>
 
+      
 </mule>
