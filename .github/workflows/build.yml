@@ -15,7 +15,7 @@ jobs:
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
 
   deploy-after-merge:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/test'
     uses: jegoSFDC/mulesofttemplate/.github/workflows/cd-deploy.yml@main
     secrets:
       CA_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
