@@ -1,6 +1,4 @@
-# salesforce-app-api/.github/workflows/main.yml
-
-name: Mule CI/CD Pipeline
+name: Mulesoft CI/CD Githubaction Pipeline
 
 on:
   pull_request:
