@@ -1,6 +1,4 @@
-# salesforce-app-api/.github/workflows/main.yml
-
-name: Mule CI/CD Pipeline
+name: Mulesoft CI/CD Githubaction Pipeline
 
 on:
   pull_request:
@@ -9,16 +7,16 @@ on:
     branches: [ develop ]
 
 jobs:
-  build-on-pr:
+  prvalidationbuild:
     if: github.event_name == 'pull_request'
-    uses: anish-salesforce/mule-deployments/.github/workflows/ci-build.yml@main
+    uses: jegoSFDC/mulesofttemplate/.github/workflows/ci-build.yml@main
     secrets:
       CA_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
 
-  deploy-on-merge:
+  deploy-after-merge:
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-    uses: anish-salesforce/mule-deployments/.github/workflows/cd-deploy.yml@main
+    uses: jegoSFDC/mulesofttemplate/.github/workflows/cd-deploy.yml@main
     secrets:
       CA_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
