@@ -4,7 +4,7 @@
 
 	<groupId>9fd2ed15-44cc-4a0c-95ff-d77cc0b6f63d</groupId>
 	<artifactId>patient-api</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<packaging>mule-application</packaging>
 
 	<name>Patient API</name>
